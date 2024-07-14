@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import * as dotenv from 'dotenv';
+import { AllExceptionFilter } from './httpExceptionFilter';
 
 dotenv.config();
 
@@ -13,6 +14,9 @@ dotenv.config();
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,{
+    provide:'APP_FILTER',
+    useClass:AllExceptionFilter,
+  },],
 })
 export class AppModule {}
