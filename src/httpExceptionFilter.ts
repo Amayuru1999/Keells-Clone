@@ -1,11 +1,11 @@
 import {
-    ArgumentsHost,
-    Catch,
-    ExceptionFilter,
-    HttpException,
-    HttpStatus,
-  } from '@nestjs/common';
-  import { HttpAdapterHost } from '@nestjs/core';
+  ArgumentsHost,
+  Catch,
+  ExceptionFilter,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
+import { HttpAdapterHost } from '@nestjs/core';
   
   export interface HttpExceptionResponse {
     statusCode: number;

@@ -1,15 +1,15 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { userTypes } from 'src/shared/schema/users';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
 import config from 'config';
 import { UserRepository } from 'src/shared/repositories/user.repository';
+import { userTypes } from 'src/shared/schema/users';
+import { sendEmail } from 'src/shared/utility/mail-handler';
 import {
   comparePassword,
   generateHashPassword,
 } from 'src/shared/utility/password-manager';
-import { sendEmail } from 'src/shared/utility/mail-handler';
 import { generateAuthToken } from 'src/shared/utility/token-generator';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 @Injectable()
 export class UsersService {
   constructor(
