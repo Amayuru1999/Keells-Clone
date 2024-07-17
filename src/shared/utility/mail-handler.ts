@@ -15,7 +15,7 @@ export const sendEmail = async (
     form.append('subject', subject);
     form.append(
       'from',
-      'mailgun@sandbox4ea7cfe84fde4fbcb3bf6b9157156213.mailgun.org',
+      'sandbox543217bf2b6b4213a1e10be687f136a3.mailgun.org',
     );
     Object.keys(templateVars).forEach((key) => {
       form.append(`v:${key}`, templateVars[key]);
